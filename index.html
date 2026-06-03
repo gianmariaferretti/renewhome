@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#075d43" />
+  <meta name="description" content="Renew Home mobile prototype: smart-home energy shifts, rewards and impact dashboard." />
+  <title>Renew Home App Prototype</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="prototype-wrap" aria-label="Renew Home working prototype">
+    <section class="phone" aria-label="Mobile application preview">
+      <div class="notch" aria-hidden="true"></div>
+      <div id="app" class="app" aria-live="polite"></div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </section>
+
+    <aside class="prototype-notes" aria-label="Prototype notes">
+      <div class="notes-card">
+        <span class="pill">Working prototype</span>
+        <h1>Renew Home</h1>
+        <p>Tap through onboarding, connect devices, start an Energy Shift, redeem rewards and share the impact card. Data is stored locally in your browser.</p>
+        <button class="secondary wide" type="button" data-external-action="reset">Reset demo</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

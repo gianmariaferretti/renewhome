@@ -1,0 +1,12 @@
+{
+  "name": "renew-home-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Working Renew Home mobile web prototype.",
+  "scripts": {
+    "start": "python3 -m http.server 5173"
+  },
+  "keywords": ["renew-home", "vpp", "energy", "prototype", "pwa"],
+  "author": "",
+  "license": "UNLICENSED"
+}
