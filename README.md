@@ -40,3 +40,4 @@ You can also open `index.html` directly in a browser, but the service worker wil
 ## Notes
 
 This is a front-end prototype with simulated data. It does not connect to real Nest, Google Home, utility, payment or grid APIs yet.
+Deployment test
