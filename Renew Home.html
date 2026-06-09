@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renew Home — Save automatically · Orchestrate a VPP at scale</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="nav-brand" aria-label="Renew Home home">
+      <img src="assets/renew-home-logo.png" alt="Renew Home" class="nav-logo">
+      <img src="assets/renew-home-logo-white.png" alt="Renew Home" class="nav-logo white">
+    </a>
+
+    <div class="toggle" id="pageToggle" data-page="b2c" role="tablist" aria-label="Choose audience">
+      <span class="toggle-thumb" aria-hidden="true"></span>
+      <button role="tab" aria-selected="true" data-target="b2c"><span class="dot"></span>For Homeowners</button>
+      <button role="tab" aria-selected="false" data-target="b2b"><span class="dot"></span>For Utilities</button>
+    </div>
+
+    <div class="nav-right">
+      <button class="btn btn-primary btn-sm nav-cta" data-cta="nav">
+        <span data-navlabel="b2c">Connect Thermostat</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     PAGE 1 · B2C — HOMEOWNERS
+     ============================================================ -->
+<main id="b2c" class="page active" data-screen-label="B2C — Homeowners">
+
+  <!-- HERO -->
+  <section class="hero-c" id="heroC">
+    <div class="mesh"></div>
+    <div class="wrap">
+      <div class="grid2">
+        <div class="hero-copy">
+          <div class="badge-row">
+            <span class="pill"><span class="live"></span>Live on 5M+ homes</span>
+            <span class="pill" style="background:var(--paper-3);color:var(--ink-2)">Works with your thermostat</span>
+          </div>
+          <h1 class="h-display grad-text">Save ~$100/year<br>automatically.<br>No cost. No effort.</h1>
+          <p class="lead">Connect your existing smart thermostat to Renew Home. We shift micro-amounts of energy during peak grid stress to lower your bills and carbon footprint — while keeping you perfectly comfortable.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" data-cta="connect">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+              Connect My Thermostat (Free)
+            </button>
+            <button class="btn btn-ghost" data-cta="video-b2c">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              Watch Explainer
+            </button>
+          </div>
+          <div class="hero-note">
+            <div class="avatars"><span></span><span></span><span></span><span></span></div>
+            Join thousands shifting energy without lifting a finger.
+          </div>
+        </div>
+
+        <!-- hero art: live savings card + peak-shave curve -->
+        <div class="hero-art reveal">
+          <div class="savings-card">
+            <div class="sc-head">
+              <span class="sc-label">Your estimated savings</span>
+              <span class="sc-chip">Auto-optimized</span>
+            </div>
+            <div class="sc-amount"><span class="cur">$</span><span id="heroAmount" class="tnum">104</span><span class="yr" style="font-size:18px;color:var(--muted);font-weight:600"> /yr</span></div>
+            <div class="sc-sub">Comfort held within 1°F · You're always in control</div>
+
+            <div class="curve">
+              <div class="legend">
+                <span><i style="background:var(--line-2)"></i>Typical usage</span>
+                <span><i style="background:var(--accent)"></i>With Renew Home</span>
+              </div>
+              <svg viewBox="0 0 440 150" width="100%" height="150" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gSave" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="var(--accent)" stop-opacity="0.28"/>
+                    <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- grid lines -->
+                <g stroke="var(--line)" stroke-width="1">
+                  <line x1="0" y1="40" x2="440" y2="40"/><line x1="0" y1="80" x2="440" y2="80"/><line x1="0" y1="120" x2="440" y2="120"/>
+                </g>
+                <!-- peak window highlight -->
+                <rect x="250" y="0" width="120" height="150" fill="var(--green-tint)" opacity="0.6"/>
+                <text x="310" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="var(--accent-deep)" font-family="var(--mono)">PEAK</text>
+                <!-- baseline (typical) -->
+                <path d="M0,118 C60,112 90,95 130,92 C180,88 210,60 250,40 C285,24 310,26 330,34 C360,46 400,96 440,110"
+                      fill="none" stroke="var(--line-2)" stroke-width="2.5" stroke-dasharray="5 5"/>
+                <!-- optimized (shaved) -->
+                <path id="curveOpt" d="M0,118 C60,112 90,96 130,93 C180,90 210,82 250,84 C285,86 310,88 330,84 C360,78 400,98 440,110 L440,150 L0,150 Z"
+                      fill="url(#gSave)" stroke="none"/>
+                <path d="M0,118 C60,112 90,96 130,93 C180,90 210,82 250,84 C285,86 310,88 330,84 C360,78 400,98 440,110"
+                      fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER LOGO CLOUD (social proof) -->
+  <div class="logo-cloud">
+    <div class="wrap">
+      <div class="lc-label">Works with the thermostat you already own · 300+ device partners</div>
+      <div class="logos">
+        <span class="logo"><span class="mk" style="background:#4285F4">N</span><span class="wm">Google Nest</span></span>
+        <span class="logo"><span class="mk" style="background:#1295a6">e</span><span class="wm">Ecobee</span></span>
+        <span class="logo"><span class="mk" style="background:#e1251b">H</span><span class="wm">Honeywell</span></span>
+        <span class="logo"><span class="mk" style="background:#a50034">LG</span><span class="wm">LG ThinQ</span></span>
+        <span class="logo"><span class="mk" style="background:#c8102e">R</span><span class="wm">Rheem</span></span>
+        <span class="logo"><span class="mk round" style="background:#ff9900">a</span><span class="wm">Amazon</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATOR -->
+  <section class="section" id="calcC">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Household Savings Calculator</span>
+        <h2 class="h2">See what your home could save.</h2>
+        <p class="lead">Two quick inputs. Real-time estimate of your annual savings and carbon avoided.</p>
+      </div>
+
+      <div class="calc reveal">
+        <div class="calc-in">
+          <div class="calc-title">Tell us about your home</div>
+          <div class="field">
+            <label for="brand">Your smart thermostat brand</label>
+            <div class="select">
+              <select id="brand">
+                <option value="nest" data-f="1.06">Nest / Google Home</option>
+                <option value="ecobee" data-f="1.0">Ecobee</option>
+                <option value="honeywell" data-f="0.95">Honeywell</option>
+                <option value="lg" data-f="0.92">LG</option>
+                <option value="other" data-f="0.9">Other compatible device</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bill">Average monthly electricity bill <span class="hint">drag to adjust</span></label>
+            <div class="range-head">
+              <span class="range-val"><span class="cur">$</span><span id="billVal" class="tnum">150</span><span style="font-size:16px;color:var(--muted);font-weight:600"> /mo</span></span>
+            </div>
+            <input type="range" class="rng" id="bill" min="50" max="500" step="5" value="150">
+            <div class="range-scale"><span>$50</span><span>$500</span></div>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label style="margin-bottom:8px">What you keep</label>
+            <p class="eq" style="margin:0">Full comfort control, instant override, and a real-time savings dashboard. Set it once — we handle the rest.</p>
+          </div>
+        </div>
+
+        <div class="calc-out">
+          <div class="out-eyebrow">Estimated annual savings</div>
+          <p class="out-hero"><span class="cur">$</span><span id="outSavings" class="tnum">104</span><span class="yr"> /year</span></p>
+          <div class="out-bar"><i id="savingsBar" style="width:42%"></i></div>
+          <div style="font-size:12px;color:var(--muted);font-weight:600;margin:2px 0 0">Your home joins the live network</div>
+          <div class="node-strip" id="nodeStripC"></div>
+          <div class="out-grid">
+            <div class="metric">
+              <div class="mv"><span id="outCo2" class="tnum">360</span> <span class="u">kg</span></div>
+              <div class="ml">CO₂ avoided per year</div>
+            </div>
+            <div class="metric">
+              <div class="mv"><span id="outTrees" class="tnum">17</span> <span class="u">trees</span></div>
+              <div class="ml">Equivalent absorbed / yr</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" data-cta="claim">Claim Your Savings</button>
+          <div class="calc-foot">Free forever · No hardware to buy · Cancel anytime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="section" id="valuesC" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Set &amp; forget</span>
+        <h2 class="h2">Effortless by design.</h2>
+      </div>
+      <div class="bento" id="valueCards">
+        <div class="cell lg reveal">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.4-7 10-7 10z"/></svg></div>
+          <h3 class="h3">Comfort-first design</h3>
+          <p>You always retain full control. Shifts stay within a degree of your setpoint, and a single tap overrides any event, instantly. Permission-based and transparent, start to finish.</p>
+          <div class="control-demo">
+            <div class="toggle-mini" id="comfortToggle" role="switch" aria-checked="true"><i></i></div>
+            <span id="comfortLabel">Auto-optimize ON · override anytime</span>
+          </div>
+        </div>
+        <div class="cell sm reveal d1">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg></div>
+          <h3 class="h3">Invisible integration</h3>
+          <p>Lives inside the app you already use — Nest, Google Home and more. No new hardware, no new login, nothing to learn.</p>
+        </div>
+        <div class="cell sm reveal d2">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4 12H2M22 12h-2M6 6 4.5 4.5M19.5 19.5 18 18M18 6l1.5-1.5M4.5 19.5 6 18"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3 class="h3">Earn rewards</h3>
+          <p>Get incentives every time you help balance the grid during a stress event — with visible proof of impact.</p>
+        </div>
+        <div class="cell wide accent-cell reveal">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;width:100%">
+            <div style="max-width:34ch">
+              <div class="cell-num">PROVEN AT SCALE</div>
+              <h3 class="h3" style="margin:0">You're never locked in. Opt out in one tap, anytime.</h3>
+            </div>
+            <div style="display:flex;gap:40px">
+              <div><div class="cell-big">5M<span class="u">+</span></div><p>homes connected</p></div>
+              <div><div class="cell-big">~$100<span class="u">/yr</span></div><p>average savings</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="howC" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2 class="h2">Three minutes to set up. Forever to forget.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Connect your thermostat</h3>
+          <p>Authorize Renew Home inside your existing smart-home app. One permission, fully transparent, opt out anytime.</p>
+        </div>
+        <div class="step reveal d1">
+          <h3>We optimize quietly</h3>
+          <p>Our AI nudges heating and cooling at the perfect moments — only when the grid is stressed and you won't feel it.</p>
+        </div>
+        <div class="step reveal d2">
+          <h3>You watch it add up</h3>
+          <p>Track savings and CO₂ avoided in real time. Lower bills land automatically, month after month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLAINER VIDEO -->
+  <section class="video-band section">
+    <div class="wrap">
+      <div class="video-wrap">
+        <div class="reveal">
+          <span class="eyebrow">1-minute explainer</span>
+          <h2 class="h2" style="margin:16px 0 14px">See it in 60 seconds.</h2>
+          <p class="lead">A quick, spoken walkthrough of how Renew Home turns your everyday thermostat into automatic savings — and a cleaner grid.</p>
+          <button class="btn btn-ghost" data-cta="video-b2c" style="margin-top:24px">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play explainer
+          </button>
+        </div>
+        <div class="video-frame reveal d1">
+          <image-slot id="explainer-b2c" shape="rect" placeholder="Drop your 1-minute explainer poster frame" fit="cover"></image-slot>
+          <button class="play-btn" data-cta="video-b2c" aria-label="Play explainer video">
+            <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <span class="video-tag">0:58 · Homeowner explainer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (pain-based) -->
+  <section class="section" id="faqC" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Your questions, answered</span>
+        <h2 class="h2">No catch. Just comfort.</h2>
+      </div>
+      <div class="faq reveal" data-faq>
+        <div class="faq-item">
+          <div class="faq-q">Can I turn it off if I'm cold?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Always. The whole system is comfort-first — temperature shifts stay within about 1°F of your setpoint, and you can override any event with a single tap in your app. You stay in control, every time.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are you taking remote control of my home?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Only with your explicit permission, and only for tiny, comfort-safe adjustments during grid-stress moments. It's transparent and permission-based — you can opt out at any time, no questions asked.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I have to track time-of-use tariffs or schedules?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Never. Renew Home is fully automatic — no scheduling, no learning curve, no figuring out when energy is cheapest. Our AI handles the timing so you don't have to think about it.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does it actually lower my bill?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Yes — households save roughly $100 a year on average, with zero effort. A real-time dashboard shows exactly how much you've saved and how much CO₂ you've avoided, so the impact is always visible.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is there any cost or hardware to buy?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">None. It's free forever and works with the smart thermostat you already own. No device to purchase, no installation, no subscription.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL VALIDATION SIGNUP -->
+  <section class="section" id="signupC">
+    <div class="wrap">
+      <div class="signup reveal">
+        <span class="eyebrow center" style="color:var(--accent)">Start saving today</span>
+        <h2 class="h2" style="margin:16px 0 14px">Lower your bill on autopilot.</h2>
+        <p class="lead">Drop your email and we'll connect your thermostat in minutes. Free, forever.</p>
+        <form class="signup-form" id="signupForm">
+          <input type="email" id="signupEmail" placeholder="you@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Get Started Free</button>
+        </form>
+        <div class="signup-meta">
+          <div><b>5M+</b> homes connected</div>
+          <div><b>~$100</b> average yearly savings</div>
+          <div><b>0</b> hardware to buy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     PAGE 2 · B2B — UTILITIES & GRID OPERATORS
+     ============================================================ -->
+<main id="b2b" class="page on-dark" data-screen-label="B2B — Utilities">
+
+  <!-- HERO -->
+  <section class="hero-b" id="heroB">
+    <div class="mesh"></div>
+    <div class="wrap">
+      <div class="grid2">
+        <div class="hero-copy">
+          <div class="badge-row">
+            <span class="pill"><span class="live" style="background:#7ef0ab"></span>3–4 GW dispatchable today</span>
+          </div>
+          <h1 class="h-display grad-text">Orchestrate a multi-sided virtual power plant at GW scale.</h1>
+          <p class="lead">Aggregate residential energy shifts into a predictable, dispatchable macro-resource. Achieve 95%+ dispatch accuracy and avoid expensive peaker-plant CAPEX.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" data-cta="pilot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Request 6-Month Paid Pilot
+            </button>
+            <button class="btn btn-ghost" data-cta="whitepaper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              Download VPP Whitepaper
+            </button>
+          </div>
+          <div class="kpibar">
+            <div class="kpi"><div class="kv">5M<span class="u">+</span></div><div class="kl">Connected homes</div></div>
+            <div class="kpi"><div class="kv">95<span class="u">%+</span></div><div class="kl">Dispatch accuracy</div></div>
+            <div class="kpi"><div class="kv">50<span class="u">%</span></div><div class="kl">Cheaper than batteries</div></div>
+          </div>
+        </div>
+
+        <!-- dispatch dashboard art -->
+        <div class="dash reveal">
+          <div class="dash-top">
+            <span class="dt-title"><span class="ld"></span>Live dispatch · CAISO</span>
+            <span class="dash-mono">REQ 42.0 MW · DELIV 41.6 MW</span>
+          </div>
+          <svg viewBox="0 0 460 180" width="100%" height="170" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="gDispatch" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="var(--accent)" stop-opacity="0.35"/>
+                <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+              <line x1="0" y1="45" x2="460" y2="45"/><line x1="0" y1="90" x2="460" y2="90"/><line x1="0" y1="135" x2="460" y2="135"/>
+            </g>
+            <!-- target dispatch (dashed) -->
+            <path d="M0,150 L70,150 L90,60 L300,60 L320,150 L460,150" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-dasharray="6 5"/>
+            <!-- delivered (filled area) -->
+            <path d="M0,152 L70,150 C82,150 84,64 96,64 L296,64 C308,64 310,150 322,150 L460,150 L460,180 L0,180 Z" fill="url(#gDispatch)"/>
+            <path d="M0,152 L70,150 C82,150 84,64 96,64 L296,64 C308,64 310,150 322,150 L460,150" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="200" cy="64" r="4" fill="var(--accent)"/>
+          </svg>
+          <div class="dash-stats">
+            <div class="dstat"><div class="dv">41.6 MW</div><div class="dl">Delivered now</div></div>
+            <div class="dstat"><div class="dv">99.0%</div><div class="dl">Accuracy</div></div>
+            <div class="dstat"><div class="dv">182 ms</div><div class="dl">Dispatch latency</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER LOGO CLOUD (B2B social proof) -->
+  <div class="logo-cloud on-dark">
+    <div class="wrap">
+      <div class="lc-label">Trusted across 100+ utility &amp; grid partnerships</div>
+      <div class="logos">
+        <span class="logo"><span class="mk" style="background:#4285F4">G</span><span class="wm">Google Cloud</span></span>
+        <span class="logo"><span class="mk" style="background:#0a7d3c">C</span><span class="wm">CAISO</span></span>
+        <span class="logo"><span class="mk" style="background:#c8102e">E</span><span class="wm">ERCOT</span></span>
+        <span class="logo"><span class="mk round" style="background:#5b6cff">D</span><span class="wm">DERMS</span></span>
+        <span class="logo"><span class="mk" style="background:#8a5a00">100</span><span class="wm">+ Utilities</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATOR -->
+  <section class="section" id="calcB">
+    <div class="wrap on-dark">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Grid CAPEX &amp; Impact Calculator</span>
+        <h2 class="h2">Model your avoided cost in seconds.</h2>
+        <p class="lead">Size the capacity you need. We'll show CAPEX avoided, the home base required, and carbon impact.</p>
+      </div>
+
+      <div class="calc reveal" style="border-color:var(--dark-line)">
+        <div class="calc-in">
+          <div class="calc-title">Configure your program</div>
+          <div class="field">
+            <label for="mw">Target peak capacity needed <span class="hint">drag to adjust</span></label>
+            <div class="range-head">
+              <span class="range-val"><span id="mwVal" class="tnum">25</span><span style="font-size:16px;color:var(--muted);font-weight:600"> MW</span></span>
+            </div>
+            <input type="range" class="rng" id="mw" min="1" max="100" step="1" value="25">
+            <div class="range-scale"><span>1 MW</span><span>100 MW</span></div>
+          </div>
+          <div class="field">
+            <label for="market">Market type</label>
+            <div class="select">
+              <select id="market">
+                <option value="ercot" data-f="1.15">Deregulated — ERCOT / CAISO</option>
+                <option value="regulated" data-f="1.0">Regulated utility</option>
+                <option value="cca" data-f="1.05">Community Choice Aggregator (CCA)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label style="margin-bottom:8px">What you get</label>
+            <p class="eq" style="margin:0">Contractually-guaranteed MW, DERMS integration, and full M&amp;V reporting — with Renew Home owning the tech, compliance and end-user operations.</p>
+          </div>
+        </div>
+
+        <div class="calc-out">
+          <div class="out-eyebrow">Peaker-plant CAPEX avoided</div>
+          <p class="out-hero"><span class="cur">$</span><span id="outCapex" class="tnum">25.0</span><span class="yr"> M</span></p>
+          <div class="out-bar"><i id="capexBar" style="width:25%"></i></div>
+          <div class="out-grid">
+            <div class="metric">
+              <div class="mv"><span id="outHomes" class="tnum">25,000</span></div>
+              <div class="ml">Connected homes needed</div>
+            </div>
+            <div class="metric">
+              <div class="mv"><span id="outCarbon" class="tnum">8,250</span> <span class="u">MT</span></div>
+              <div class="ml">CO₂ avoided per year</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" data-cta="allocate">Secure Pilot &amp; Capacity Allocation</button>
+          <div class="calc-foot">Based on ~$1M+/MW peaker cost · ~1,000 homes/MW</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE / PAIN RELIEVERS -->
+  <section class="section" id="featuresB" style="padding-top:0">
+    <div class="wrap on-dark">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why utilities choose Renew Home</span>
+        <h2 class="h2">Capacity you can count on. Risk you can transfer.</h2>
+      </div>
+      <div class="bento">
+        <div class="cell lg reveal" style="padding:0;min-height:320px">
+          <div class="vpp" id="vppGrid">
+            <div class="vpp-tag"><span class="ld"></span>Live aggregation network</div>
+            <svg class="links" id="vppLinks" preserveAspectRatio="none"></svg>
+            <div class="vpp-meta">Aggregating <b id="vppHomes">25,000</b> homes → <b id="vppMw">25 MW</b> dispatchable</div>
+          </div>
+        </div>
+        <div class="cell sm reveal d1">
+          <div class="cell-num">01 / ACCURACY</div>
+          <div class="cell-big">95<span class="u">%+</span></div>
+          <h3 class="h3">Dispatch accuracy</h3>
+          <p>AI-driven load forecasting and real-time orchestration deliver predictable, contractually-guaranteed MW — event after event.</p>
+        </div>
+        <div class="cell sm reveal d2">
+          <div class="cell-num">02 / SPEED</div>
+          <div class="cell-big">0<span class="u"> build</span></div>
+          <h3 class="h3">Zero in-house build</h3>
+          <p>Plug into an existing 5M+ home base instantly instead of building from zero. Fast time-to-market, no platform to stand up.</p>
+        </div>
+        <div class="cell wide reveal">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;width:100%">
+            <div style="max-width:46ch">
+              <div class="cell-num">03 / RISK</div>
+              <h3 class="h3" style="margin:0 0 8px">Total risk transfer</h3>
+              <p>Renew Home owns the underlying technology, regulatory compliance, and end-user operations. You simply bid in clean, dispatchable capacity.</p>
+            </div>
+            <div class="cell-big" style="white-space:nowrap">100<span class="u">% owned by us</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST & TRACTION -->
+  <section class="section" id="tractionB" style="padding-top:0">
+    <div class="wrap on-dark">
+      <div class="section-head reveal">
+        <span class="eyebrow">Trust &amp; traction</span>
+        <h2 class="h2">Built to scale to 50 GW.</h2>
+      </div>
+      <div class="traction">
+        <div class="tcard accent reveal">
+          <div class="tbig">15–18<span class="u"> Mt</span></div>
+          <p>CO₂ avoided per year targeted at 50 GW by 2030 — every shifted kilowatt directly replaces carbon-heavy peaker generation.</p>
+          <div class="road" aria-hidden="true">
+            <div class="rb" style="height:18%"><span>4</span><em>'25</em></div>
+            <div class="rb" style="height:34%"><span>12</span><em>'27</em></div>
+            <div class="rb" style="height:60%"><span>28</span><em>'29</em></div>
+            <div class="rb" style="height:100%"><span>50</span><em>'30</em></div>
+          </div>
+          <p style="margin-top:30px;font-family:var(--mono);font-size:11px;color:var(--dark-muted);text-transform:uppercase;letter-spacing:.08em">Dispatchable capacity roadmap · GW</p>
+        </div>
+        <div class="tcard reveal d1">
+          <div class="tbig">50<span class="u">%</span></div>
+          <p>Cheaper than utility-scale batteries for equivalent dispatchable capacity — no permitting, no multi-year construction.</p>
+          <div style="height:1px;background:var(--dark-line);margin:28px 0"></div>
+          <div class="tbig" style="font-size:40px">$1M<span class="u">+ / MW</span></div>
+          <p>Peaker-plant CAPEX avoided per megawatt, with capacity online in months instead of years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLAINER VIDEO -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap on-dark">
+      <div class="video-wrap">
+        <div class="video-frame reveal">
+          <image-slot id="explainer-b2b" shape="rect" placeholder="Drop your VPP architecture explainer poster" fit="cover"></image-slot>
+          <button class="play-btn" data-cta="video-b2b" aria-label="Play VPP explainer video">
+            <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <span class="video-tag">1:00 · VPP architecture explainer</span>
+        </div>
+        <div class="reveal d1">
+          <span class="eyebrow">1-minute explainer</span>
+          <h2 class="h2" style="margin:16px 0 14px">How the orchestration works.</h2>
+          <p class="lead">A one-minute spoken walkthrough of the dispatch stack: from residential micro-shifts to a single, market-ready macro-resource.</p>
+          <button class="btn btn-ghost" data-cta="video-b2b" style="margin-top:24px">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play explainer
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (pain-based, B2B) -->
+  <section class="section" id="faqB" style="padding-top:0">
+    <div class="wrap on-dark">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Procurement questions</span>
+        <h2 class="h2">Built for grid reliability teams.</h2>
+      </div>
+      <div class="faq reveal" data-faq>
+        <div class="faq-item">
+          <div class="faq-q">How accurate is the balancing?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">We achieve 95%+ dispatch accuracy through predictive AI orchestration — load forecasting plus real-time control across millions of devices — so you get contractually-guaranteed MW you can bid into capacity markets with confidence.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does this compare to building a peaker plant?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Building peaker capacity costs $1M+/MW and takes years of permitting. Renew Home delivers equivalent dispatchable capacity at roughly 50% of utility-scale battery cost, online in months instead of years — no construction, no permitting risk.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What about low enrollment and high customer-acquisition cost?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">You plug directly into an existing base of 5M+ pre-enrolled, digitally-engaged homes. Our bundled "Capacity + Customer Acquisition" offer also gives deregulated markets a low-cost channel to acquire residential customers.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Who owns compliance, M&amp;V, and operations?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">We do. Renew Home owns the technology, end-user operations, M&amp;V reporting, and regulatory filings — a full risk transfer. You integrate via our DERMS and real-time dispatch APIs and receive market-ready capacity.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can you bid into ISO/RTO capacity markets?<span class="pm"></span></div>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Aggregated load is delivered as predictable, contractually-guaranteed MW suitable for wholesale capacity auctions, demand-response events, and ancillary services across deregulated and regulated markets.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section" id="ctaB" style="padding-top:0">
+    <div class="wrap">
+      <div class="ctaband reveal">
+        <span class="eyebrow center" style="color:var(--accent)">Limited pilot capacity for 2026</span>
+        <h2 class="h2" style="color:#fff;margin:16px auto 14px;max-width:16ch">Lock in dispatchable capacity before peak season.</h2>
+        <p class="lead" style="color:var(--dark-muted);max-width:46ch;margin:0 auto">Start with a 6-month paid pilot — 10 MW and a referral program, backed by a simple LOI.</p>
+        <div class="hero-ctas" style="justify-content:center;margin-top:30px">
+          <button class="btn btn-primary" data-cta="pilot">Request 6-Month Paid Pilot</button>
+          <button class="btn btn-ghost" data-cta="whitepaper">Download VPP Whitepaper</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <img src="assets/renew-home-logo-white.png" alt="Renew Home" class="foot-logo">
+      <p>We aggregate micro-shifts in residential energy into a dispatchable macro-resource — gigawatts of clean capacity, without building a single peaker plant.</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Homeowners</h4>
+        <a href="#" data-cta="connect">Connect thermostat</a>
+        <a href="#calcC" data-nav="b2c">Savings calculator</a>
+        <a href="#valuesC" data-nav="b2c">How it works</a>
+        <a href="#" data-cta="video-b2c">Watch explainer</a>
+      </div>
+      <div class="foot-col">
+        <h4>Utilities</h4>
+        <a href="#" data-cta="pilot">Request a pilot</a>
+        <a href="#calcB" data-nav="b2b">CAPEX calculator</a>
+        <a href="#" data-cta="whitepaper">VPP whitepaper</a>
+        <a href="#tractionB" data-nav="b2b">Traction</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© 2026 Renew Home · A sustainability venture. Resource replacement, by design.</span>
+      <span>Market-test prototype · For validation purposes</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ MODALS ============================ -->
+<div class="modal-scrim" id="successScrim" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-x" data-close aria-label="Close">✕</button>
+    <div class="modal-top">
+      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg></div>
+      <h3 id="mTitle">You're in! 🎉</h3>
+      <p id="mSub">We'll be in touch shortly.</p>
+    </div>
+    <div class="modal-body">
+      <div class="recap" id="mRecap"></div>
+      <button class="btn btn-primary btn-block" data-close>Done</button>
+      <div class="val-track"><span class="vd"></span><span id="mTrack">Simulated validation event recorded</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- video lightbox -->
+<div class="modal-scrim" id="videoScrim" aria-hidden="true">
+  <div class="modal video" role="dialog" aria-modal="true" aria-label="Explainer video">
+    <button class="modal-x" data-close aria-label="Close">✕</button>
+    <div class="lb-frame">
+      <image-slot id="explainer-lightbox" shape="rect" placeholder="Drop your 1-minute explainer video poster — it appears here and in the page" fit="contain"></image-slot>
+    </div>
+    <div class="lb-cap">
+      <span id="lbCap">1-Minute Spoken Explainer · drop your poster frame to preview</span>
+      <span class="dash-mono" style="color:#8b969c">PLACEHOLDER</span>
+    </div>
+  </div>
+</div>
+
+<!-- ambient live toasts -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- tweaks mount -->
+<div id="tweaks-root"></div>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script src="image-slot.js"></script>
+<script src="app.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks.jsx"></script>
+
+</body>
+</html>
